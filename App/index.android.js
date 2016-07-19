@@ -1,17 +1,18 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
+ * @flow
  */
-'use strict';
-import React, {
+
+import React, { Component } from 'react';
+import {
   AppRegistry,
-  Component,
   StyleSheet,
   Text,
   View
 } from 'react-native';
 
-class vanthink_ios_app extends Component {
+class APP extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -48,4 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('vanthink_ios_app', () => vanthink_ios_app);
+AppRegistry.registerComponent('APP', () => APP);

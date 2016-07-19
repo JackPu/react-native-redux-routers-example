@@ -1,95 +1,53 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
+ * @flow
  */
-'use strict';
 
-import React, {
+import React, { Component } from 'react';
+import {
   AppRegistry,
-  Component,
   StyleSheet,
   Text,
-  View,
-  Image,
+  View
 } from 'react-native';
-import Router from 'react-native-simple-router';
-//import TwitterApp from './node_modules/react-native-simple-router/twitter-example';
-var App = require('./service/core.app');
-var SignIn = require('./pages/sign-in.js');
-var Home = require('./pages/home.ios.js');
 
-var firstRoute = {
-  name: 'Home',
-  component: Home,
-  hideNavigationBar: true,
-  statusBarProps:{statusBarHidden: true}
-};
+class APP extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.ios.js
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+D or shake for dev menu
+        </Text>
+      </View>
+    );
+  }
+}
 
-
-class VanthinkApp extends Component {
-    
-    constructor(props) {
-        super(props);
-        var self = this;
-        //var isLogin = App.checkLogin(function(value) {
-          //  self.setState({isLogin: value, loading: false}); 
-        //});
-        this.state = {
-            isLogin:  true,
-            loading: false,                      
-        };
-    }
-    
-    
-    renderLogo() {
-        return (
-          <View style={styles.container}>
-             <Image style={styles.image} source={require('./images/vanthink-ios-app.jpg')} />
-          </View>
-        );        
-    }
-    
-    
-    render() {
-        var self = this;
-                                  
-        
-        
-                                    
-                                                         
-        if (this.state.loading) {
-          return this.renderLogo();
-        }                            
-        
-        if(this.state.isLogin === false && this.state.loading === false) {
-            firstRoute = {
-                name: '登录',
-                component: SignIn,
-                headerStyle: {
-                    backgroundColor: '#f1e7ce',
-                }
-            };
-        }
-        
-        return (
-            <Router firstRoute={firstRoute} />
-        )
-    }
-};
-var styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-        position: 'relative',
-    },
-    
-    image: {
-        flex:1,
-        resizeMode: 'contain',
-    }
-  
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
 });
 
-AppRegistry.registerComponent('vanthink_ios_app', () => VanthinkApp);
+AppRegistry.registerComponent('APP', () => APP);

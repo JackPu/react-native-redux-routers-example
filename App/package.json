@@ -1,23 +1,12 @@
 {
-  "name": "vanthink_ios_app",
+  "name": "APP",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react-native": "^0.21.0",
-    "react-native-button": "^1.4.2",
-    "react-native-gifted-listview": "0.0.13",
-    "react-native-router": "^0.2.1",
-    "react-native-scrollable-tab-view": "^0.4.0",
-    "react-native-simple-router": "^0.8.4",
-    "react-native-sqlite-storage": "^2.1.4",
-    "react-native-tabs": "^1.0.5",
-    "redux": "^3.5.2",
-    "regenerator": "^0.8.42"
-  },
-  "devDependencies": {
-    "react-redux": "^4.4.5"
+    "react": "15.2.1",
+    "react-native": "^0.29.2"
   }
 }
